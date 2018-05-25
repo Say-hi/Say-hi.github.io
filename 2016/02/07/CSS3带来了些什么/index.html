@@ -211,6 +211,8 @@
                             
                                 <a class="fl QQ" target="_blank" href="tencent://message/?uin=782108446" title="QQ">QQ</a>
                             
+                                <a class="fl wechat" target="_blank" href="/img/addwechat.jpg" title="wechat">wechat</a>
+                            
                         </ul>
                     </nav>
                 </section>
@@ -272,6 +274,8 @@
                         <a class="github" target="_blank" href="https://github.com/Say-hi" title="github">github</a>
                     
                         <a class="QQ" target="_blank" href="tencent://message/?uin=782108446" title="QQ">QQ</a>
+                    
+                        <a class="wechat" target="_blank" href="/img/addwechat.jpg" title="wechat">wechat</a>
                     
                 </div>
             </nav>
@@ -406,6 +410,51 @@ HSLA:
       <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">background-image</span>: <span class="selector-tag">linear-gradient</span>(135<span class="selector-tag">deg</span>,</div><div class="line">  <span class="selector-tag">red</span> 0%,</div><div class="line">  <span class="selector-tag">red</span> 25%,</div><div class="line">  <span class="selector-tag">blue</span> 25%,</div><div class="line">  <span class="selector-tag">blue</span> 50%,</div><div class="line">  <span class="selector-tag">green</span> 50%,</div><div class="line">  <span class="selector-tag">green</span> 75%,</div><div class="line">  <span class="selector-tag">pink</span> 75%,</div><div class="line">  <span class="selector-tag">pink</span> 100%</div><div class="line">  );</div></pre></td></tr></table></figure>
 </code></pre>
       
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>可以的话，我想喝杯咖啡续命</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipayimg.jpg" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/wechatimg.jpg" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
       
     </div>
     

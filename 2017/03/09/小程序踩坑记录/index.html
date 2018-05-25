@@ -205,6 +205,8 @@ swiper 轮播组件今天遇到一个场景，需要竖向的轮播显示信息�
                             
                                 <a class="fl QQ" target="_blank" href="tencent://message/?uin=782108446" title="QQ">QQ</a>
                             
+                                <a class="fl wechat" target="_blank" href="/img/addwechat.jpg" title="wechat">wechat</a>
+                            
                         </ul>
                     </nav>
                 </section>
@@ -267,6 +269,8 @@ swiper 轮播组件今天遇到一个场景，需要竖向的轮播显示信息�
                     
                         <a class="QQ" target="_blank" href="tencent://message/?uin=782108446" title="QQ">QQ</a>
                     
+                        <a class="wechat" target="_blank" href="/img/addwechat.jpg" title="wechat">wechat</a>
+                    
                 </div>
             </nav>
         </header>                
@@ -328,6 +332,51 @@ swiper 轮播组件今天遇到一个场景，需要竖向的轮播显示信息�
 <h2 id="小程序重新拉起授权功能"><a href="#小程序重新拉起授权功能" class="headerlink" title="小程序重新拉起授权功能"></a>小程序重新拉起授权功能</h2><p>微信基础库 1.1.0 开始支持改功能<br>‘wx.openSetting()’ 调用该接口会查看到之前对用户发起的授权设置信息，通过引导用户修改这里的授权设置，可以在不删除小程序的情况下重新拉起某些权限的获取</p>
 
       
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>可以的话，我想喝杯咖啡续命</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipayimg.jpg" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/wechatimg.jpg" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
       
     </div>
     

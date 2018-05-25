@@ -226,6 +226,8 @@ center 文本居中对齐
                             
                                 <a class="fl QQ" target="_blank" href="tencent://message/?uin=782108446" title="QQ">QQ</a>
                             
+                                <a class="fl wechat" target="_blank" href="/img/addwechat.jpg" title="wechat">wechat</a>
+                            
                         </ul>
                     </nav>
                 </section>
@@ -287,6 +289,8 @@ center 文本居中对齐
                         <a class="github" target="_blank" href="https://github.com/Say-hi" title="github">github</a>
                     
                         <a class="QQ" target="_blank" href="tencent://message/?uin=782108446" title="QQ">QQ</a>
+                    
+                        <a class="wechat" target="_blank" href="/img/addwechat.jpg" title="wechat">wechat</a>
                     
                 </div>
             </nav>
@@ -380,6 +384,51 @@ center 文本居中对齐
 </ol>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>$Title$<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span> <span class="attr">width</span>=<span class="string">"800"</span> <span class="attr">height</span>=<span class="string">"600"</span> <span class="attr">style</span>=<span class="string">"border:1px solid red"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</div><div class="line">    <span class="keyword">var</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</div><div class="line">    <span class="keyword">var</span> startRadius=-<span class="built_in">Math</span>.PI/<span class="number">2</span>;</div><div class="line">    <span class="keyword">var</span> endRadius=startRadius+<span class="number">0.1</span>*<span class="built_in">Math</span>.PI;</div><div class="line">    ctx.strokeStyle=<span class="string">"black"</span>;</div><div class="line">    <span class="comment">//ctx.lineWidth=300;</span></div><div class="line">    <span class="keyword">var</span> timer=setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(endRadius&gt;=(startRadius+<span class="number">2</span>*<span class="built_in">Math</span>.PI))&#123;</div><div class="line">            clearInterval(timer);</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//清空整个画布：</span></div><div class="line">        ctx.clearRect(<span class="number">0</span>,<span class="number">0</span>,canvas.width,canvas.height);</div><div class="line">        ctx.moveTo(<span class="number">400</span>,<span class="number">150</span>);</div><div class="line">        ctx.arc(<span class="number">400</span>,<span class="number">300</span>,<span class="number">150</span>,startRadius,endRadius);</div><div class="line">        ctx.stroke();<span class="comment">//4.3          4.7(1.5个)</span></div><div class="line">        endRadius+=<span class="number">0.01</span>*<span class="built_in">Math</span>.PI;</div><div class="line">        <span class="built_in">console</span>.log(endRadius);<span class="comment">//4.7        5</span></div><div class="line">    &#125;,<span class="number">20</span>);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
       
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>可以的话，我想喝杯咖啡续命</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipayimg.jpg" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/wechatimg.jpg" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
       
     </div>
     

@@ -205,6 +205,8 @@ meta name=”viewport” content=”width=device-width,initial-scale=1”
                             
                                 <a class="fl QQ" target="_blank" href="tencent://message/?uin=782108446" title="QQ">QQ</a>
                             
+                                <a class="fl wechat" target="_blank" href="/img/addwechat.jpg" title="wechat">wechat</a>
+                            
                         </ul>
                     </nav>
                 </section>
@@ -267,6 +269,8 @@ meta name=”viewport” content=”width=device-width,initial-scale=1”
                     
                         <a class="QQ" target="_blank" href="tencent://message/?uin=782108446" title="QQ">QQ</a>
                     
+                        <a class="wechat" target="_blank" href="/img/addwechat.jpg" title="wechat">wechat</a>
+                    
                 </div>
             </nav>
         </header>                
@@ -319,6 +323,51 @@ meta name=”viewport” content=”width=device-width,initial-scale=1”
 <h3 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h3><p>HTML 4和CSS 2目前支持为不同的媒体类型设定专有的样式表, 比如, 一个页面在屏幕上显示时使用无衬线字体,<br>而在打印时则使用衬线字体, screen 和 print 是两种已定义的媒体类型, 媒体查询让样式表有更强的针对性,<br>扩展了媒体类型的功能;媒体查询由媒体类型和一个或多个检测媒体特性的条件表达式组成,<br>媒体查询中可用于检测的媒体特性有width、height和color（等）, 使用媒体查询, 可以在不改变页面内容的情况下,<br>为特定的一些输出设备定制显示效果。</p>
 <h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@media screen and (max-width:960px)&#123;your code&#125;</div><div class="line">&lt;link rel="stylesheet" media="screen and (max-width:960px)" href='xxx.css'/&gt;</div></pre></td></tr></table></figure>
       
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>可以的话，我想喝杯咖啡续命</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipayimg.jpg" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/wechatimg.jpg" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
       
     </div>
     

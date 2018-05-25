@@ -201,6 +201,8 @@
                             
                                 <a class="fl QQ" target="_blank" href="tencent://message/?uin=782108446" title="QQ">QQ</a>
                             
+                                <a class="fl wechat" target="_blank" href="/img/addwechat.jpg" title="wechat">wechat</a>
+                            
                         </ul>
                     </nav>
                 </section>
@@ -263,6 +265,8 @@
                     
                         <a class="QQ" target="_blank" href="tencent://message/?uin=782108446" title="QQ">QQ</a>
                     
+                        <a class="wechat" target="_blank" href="/img/addwechat.jpg" title="wechat">wechat</a>
+                    
                 </div>
             </nav>
         </header>                
@@ -321,6 +325,51 @@
 <h3 id="对象属性的查找"><a href="#对象属性的查找" class="headerlink" title="对象属性的查找"></a>对象属性的查找</h3><p>直接从代码上更直观的了解<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//获取对象属性的时候，</span></div><div class="line"><span class="comment">// 1、首先查找自身所在的内存，</span></div><div class="line"><span class="comment">// 2、然后对象的__proto__原型对象中是否存在该属性，</span></div><div class="line"><span class="comment">// 3、再去原型对象的原型对象(__proto__.__proto__)中去查找是否存在该属性，</span></div><div class="line"><span class="comment">// 4.。。。。。一直找到原型链的顶端(__proto__:null)</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name=<span class="string">"小红"</span>;</div><div class="line">&#125;</div><div class="line">Student.prototype.say=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> s1=<span class="keyword">new</span> Student();</div><div class="line"><span class="built_in">console</span>.log(s1.name);</div><div class="line"><span class="built_in">console</span>.log(s1.say);</div><div class="line"><span class="built_in">console</span>.log(s1.toString);<span class="comment">//s1.__proto__.__proto__.toString</span></div><div class="line"><span class="built_in">console</span>.log(s1.say2);<span class="comment">//undefined一直找到原型链的顶端都找不到say2属性，所以认为无法访问</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(s1.__proto__.__proto__.__proto__);<span class="comment">//null</span></div><div class="line"></div><div class="line"><span class="comment">//s1.__proto__——&gt;Student.prototype——&gt;s1继承自Student.prototype这个对象的</span></div><div class="line"><span class="comment">//s1.__proto__.__proto__——&gt;Object.prototype——&gt;Student.prototype继承自Object.prototype对象的</span></div></pre></td></tr></table></figure></p>
 
       
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>可以的话，我想喝杯咖啡续命</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipayimg.jpg" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/wechatimg.jpg" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
       
     </div>
     

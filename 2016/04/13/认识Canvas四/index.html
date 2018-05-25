@@ -199,6 +199,8 @@
                             
                                 <a class="fl QQ" target="_blank" href="tencent://message/?uin=782108446" title="QQ">QQ</a>
                             
+                                <a class="fl wechat" target="_blank" href="/img/addwechat.jpg" title="wechat">wechat</a>
+                            
                         </ul>
                     </nav>
                 </section>
@@ -260,6 +262,8 @@
                         <a class="github" target="_blank" href="https://github.com/Say-hi" title="github">github</a>
                     
                         <a class="QQ" target="_blank" href="tencent://message/?uin=782108446" title="QQ">QQ</a>
+                    
+                        <a class="wechat" target="_blank" href="/img/addwechat.jpg" title="wechat">wechat</a>
                     
                 </div>
             </nav>
@@ -345,6 +349,51 @@
 <h2 id="写了个小Canvas页面，大风车转呀转呀"><a href="#写了个小Canvas页面，大风车转呀转呀" class="headerlink" title="写了个小Canvas页面，大风车转呀转呀~~~"></a>写了个小Canvas页面，大风车转呀转呀~~~</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>$Title$<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">        body&#123;</div><div class="line">            position: relative;</div><div class="line">        &#125;</div><div class="line">        canvas&#123;</div><div class="line">            position:absolute;;</div><div class="line">            top: 0;</div><div class="line">            left: 0;</div><div class="line">            border: 1px solid red;</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvasBottom"</span> <span class="attr">width</span>=<span class="string">"800"</span> <span class="attr">height</span>=<span class="string">"600"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">width</span>=<span class="string">"800"</span> <span class="attr">height</span>=<span class="string">"600"</span> <span class="attr">id</span>=<span class="string">"canvasTop"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery-2.1.4.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> canvasTop = <span class="built_in">document</span>.getElementById(<span class="string">"canvasTop"</span>);</div><div class="line">    <span class="keyword">var</span> ctxTop = canvasTop.getContext(<span class="string">"2d"</span>);</div><div class="line">    <span class="keyword">var</span> bigRadius = <span class="number">250</span>;</div><div class="line">    <span class="keyword">var</span> smallRadius = <span class="number">50</span>;</div><div class="line">    <span class="keyword">var</span> start = <span class="number">2</span>*<span class="built_in">Math</span>.PI/<span class="number">3</span>;</div><div class="line">    <span class="keyword">var</span> start2 = <span class="number">4</span>*<span class="built_in">Math</span>.PI/<span class="number">3</span>;</div><div class="line">    <span class="keyword">var</span> start3 = <span class="number">2</span>*<span class="built_in">Math</span>.PI;</div><div class="line">    ctxTop.textAlign = <span class="string">"center"</span>;</div><div class="line">    ctxTop.textBaseline = <span class="string">"middle"</span>;</div><div class="line">    ctxTop.font = <span class="string">"18px Microsoft Yahei"</span>;</div><div class="line">    <span class="keyword">var</span> timerFn = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        ctxTop.clearRect(<span class="number">0</span>,<span class="number">0</span>,canvasTop.width,canvasTop.width);</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">smallCircle</span> (<span class="params">start,color,text</span>)</span>&#123;</div><div class="line">            ctxTop.beginPath();</div><div class="line">            <span class="keyword">var</span> x1 = <span class="built_in">Math</span>.sin(-start)*bigRadius;</div><div class="line">            <span class="keyword">var</span> y1 = <span class="built_in">Math</span>.cos(-start)*bigRadius;</div><div class="line">            <span class="keyword">var</span> x2 = <span class="number">300</span>+x1;</div><div class="line">            <span class="keyword">var</span> y2 = <span class="number">180</span>-y1;</div><div class="line">            ctxTop.moveTo(x2,y2<span class="number">-50</span>)</div><div class="line">            ctxTop.lineTo(<span class="number">300</span>,<span class="number">150</span>);</div><div class="line">            ctxTop.stroke();</div><div class="line">            ctxTop.beginPath();</div><div class="line">            ctxTop.arc(x2,y2,smallRadius,<span class="number">0</span>,<span class="number">2</span>*<span class="built_in">Math</span>.PI);</div><div class="line">            ctxTop.fillStyle = color;</div><div class="line">            ctxTop.fill();</div><div class="line">            ctxTop.fillStyle = <span class="string">"black"</span>;</div><div class="line">            ctxTop.fillText(text,x2,y2);</div><div class="line">        &#125;</div><div class="line">        smallCircle(start,<span class="string">"red"</span>,<span class="string">"Angular"</span>);</div><div class="line">        smallCircle(start2,<span class="string">"pink"</span>,<span class="string">"vue.js"</span>);</div><div class="line">        smallCircle(start3,<span class="string">"yellow"</span>,<span class="string">"bootstarp"</span>);</div><div class="line">        start+=<span class="number">0.003</span>*<span class="built_in">Math</span>.PI;</div><div class="line">        start2+=<span class="number">0.003</span>*<span class="built_in">Math</span>.PI;</div><div class="line">        start3+=<span class="number">0.003</span>*<span class="built_in">Math</span>.PI;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> timer=setInterval(timerFn,<span class="number">20</span>);</div><div class="line">    $(<span class="string">"canvas"</span>).on(<span class="string">"mouseenter"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        clearInterval(timer);</div><div class="line">        timer=setInterval(timerFn,<span class="number">5</span>);</div><div class="line">    &#125;).on(<span class="string">"mouseleave"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        clearInterval(timer);</div><div class="line">        timer=setInterval(timerFn,<span class="number">20</span>);</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">var</span> canvasBottom = <span class="built_in">document</span>.getElementById(<span class="string">"canvasBottom"</span>);</div><div class="line">    <span class="keyword">var</span> ctxBottom = canvasBottom.getContext(<span class="string">"2d"</span>);</div><div class="line"></div><div class="line">    ctxBottom.moveTo(<span class="number">300</span>,<span class="number">150</span>);</div><div class="line">    ctxBottom.lineTo(<span class="number">270</span>,<span class="number">600</span>);</div><div class="line">    ctxBottom.lineTo(<span class="number">330</span>,<span class="number">600</span>);</div><div class="line">    ctxBottom.fillStyle = <span class="string">"green"</span>;</div><div class="line">    ctxBottom.fill();</div><div class="line">    ctxBottom.beginPath()</div><div class="line">    ctxBottom.arc(<span class="number">300</span>,<span class="number">150</span>,bigRadius,<span class="number">0</span>,<span class="number">2</span>*<span class="built_in">Math</span>.PI);</div><div class="line">    ctxBottom.stroke();</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 
       
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>可以的话，我想喝杯咖啡续命</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipayimg.jpg" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/wechatimg.jpg" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
       
     </div>
     
