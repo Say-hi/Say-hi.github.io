@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>html5新增api | Say-hi的小博客(*＾-＾*)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="WEB迅猛的发展趋势已远远超乎我的想象，一起来探索下HTML5中的新知识吧。
+多媒体相关的方法：load() 加载、play() 播放、pause() 暂停属性：currentTime 视频播放的当前进度、      duration:视频的总时间      paused:视频播放的状态.事件：    oncanplay: 事件在用户可以开始播放视频/音频（audio/video）时触发。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html5新增api">
+<meta property="og:url" content="http://yoursite.com/2016/03/23/html5新增api/index.html">
+<meta property="og:site_name" content="Say-hi的小博客(*＾-＾*)">
+<meta property="og:description" content="WEB迅猛的发展趋势已远远超乎我的想象，一起来探索下HTML5中的新知识吧。
+多媒体相关的方法：load() 加载、play() 播放、pause() 暂停属性：currentTime 视频播放的当前进度、      duration:视频的总时间      paused:视频播放的状态.事件：    oncanplay: 事件在用户可以开始播放视频/音频（audio/video）时触发。">
+<meta property="og:image" content="http://yoursite.com/2016/03/23/html5新增api/1.png">
+<meta property="og:image" content="http://yoursite.com/2016/03/23/html5新增api/2.png">
+<meta property="og:image" content="http://yoursite.com/2016/03/23/html5新增api/3.png">
+<meta property="og:updated_time" content="2017-02-07T15:39:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="html5新增api">
+<meta name="twitter:description" content="WEB迅猛的发展趋势已远远超乎我的想象，一起来探索下HTML5中的新知识吧。
+多媒体相关的方法：load() 加载、play() 播放、pause() 暂停属性：currentTime 视频播放的当前进度、      duration:视频的总时间      paused:视频播放的状态.事件：    oncanplay: 事件在用户可以开始播放视频/音频（audio/video）时触发。">
+<meta name="twitter:image" content="http://yoursite.com/2016/03/23/html5新增api/1.png">
+  
+    <link rel="alternative" href="/atom.xml" title="Say-hi的小博客(*＾-＾*)" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+<a href="https://github.com/Say-hi/Say-hi.github.io" class="github-corner" aria-label="View Source Code on Github">
+    <svg width="80" height="80" viewBox="0 0 250 250"
+         style="fill:#BA68C8; color:#fff; position: fixed; top: 0; border: 0; left: 0; transform: scale(-1, 1);"
+         aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>
+    a.github-corner > svg {
+        z-index: 100;
+    }
+    .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+    }
+    @keyframes octocat-wave {
+        0%, 100% {
+            transform: rotate(0)
+        }
+        20%, 60% {
+            transform: rotate(-25deg)
+        }
+        40%, 80% {
+            transform: rotate(10deg)
+        }
+    }
+    @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+            animation: none
+        }
+        .github-corner .octo-arm {
+            animation: octocat-wave 560ms ease-in-out
+        }
+    }
+</style>
+</body>
+<body>
+<style>
+  .left-col-img {
+    animation: ani 5s infinite;
+    width:300px;
+    height: 100%;
+  }
+  @keyframes ani {
+    0% {
+      opacity: 0.2;
+      transform: scale(1);
+    }
+    20% {
+      opacity: 0.8;
+      transform: scale(1.2);
+    }
+    40% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    60% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    80% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0.2;
+    }
+  }
+  .left-col {
+    overflow: hidden;
+  }
+</style>
+  <div id="container">
+    <div class="left-col">
+      <div class="left-col-img"><img src="../img/bg.jpg" alt=""></div>
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Say-hi</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">今天的播种是为了将来的收获</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客首页</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="mailto:jwq.smile@gmail.com" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/Say-hi" title="github">github</a>
+                            
+                                <a class="fl QQ" target="_blank" href="tencent://message/?uin=782108446" title="QQ">QQ</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Back/" style="font-size: 10px;">Back</a> <a href="/tags/CSS/" style="font-size: 12px;">CSS</a> <a href="/tags/Canvas/" style="font-size: 14px;">Canvas</a> <a href="/tags/ES6/" style="font-size: 12px;">ES6</a> <a href="/tags/JavaScript/" style="font-size: 18px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 12px;">Javascript</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/Vue/" style="font-size: 16px;">Vue</a> <a href="/tags/html/" style="font-size: 20px;">html</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/sea-js/" style="font-size: 10px;">sea.js</a> <a href="/tags/web/" style="font-size: 14px;">web</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/微信/" style="font-size: 10px;">微信</a> <a href="/tags/框架/" style="font-size: 16px;">框架</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a> <a href="/tags/面向对象/" style="font-size: 14px;">面向对象</a>
+                    </div>
+                </section>
+                
+                
+                
+
+                
+                
+                <section class="switch-part switch-part3">
+                
+                    <div id="js-aboutme">没有最好的,只有更好的</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Say-hi</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Say-hi</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">今天的播种是为了将来的收获</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客首页</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="mailto:jwq.smile@gmail.com" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/Say-hi" title="github">github</a>
+                    
+                        <a class="QQ" target="_blank" href="tencent://message/?uin=782108446" title="QQ">QQ</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-html5新增api" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/23/html5新增api/" class="article-date">
+      <time datetime="2016-03-23T15:15:16.000Z" itemprop="datePublished">2016-03-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      html5新增api
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/html/">html</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>WEB迅猛的发展趋势已远远超乎我的想象，一起来探索下HTML5中的新知识吧。</p>
+<h2 id="多媒体相关的"><a href="#多媒体相关的" class="headerlink" title="多媒体相关的"></a>多媒体相关的</h2><p>方法：load() 加载、play() 播放、pause() 暂停<br>属性：currentTime 视频播放的当前进度、<br>      duration:视频的总时间<br>      paused:视频播放的状态.<br>事件：<br>    oncanplay: 事件在用户可以开始播放视频/音频（audio/video）时触发。<br>    ontimeupdate:通过该事件来报告当前的播放进度.<br>    onended:播放完时触发</p>
+<p>全屏：video.webkitRequestFullScreen();<br><img src="/2016/03/23/html5新增api/1.png" alt="html5新增api"><br><a id="more"></a><br><img src="/2016/03/23/html5新增api/2.png" alt="html5新增api"></p>
+<h3 id="拖拽"><a href="#拖拽" class="headerlink" title="拖拽"></a>拖拽</h3><p>在HTML5的规范中，我们可以通过为元素增加draggable=”true”来设置此元素是否可以进行拖拽操作，其中图片、链接默认是开启的。</p>
+<h4 id="拖拽元素"><a href="#拖拽元素" class="headerlink" title="拖拽元素"></a>拖拽元素</h4><p>页面中设置了draggable=”true”属性的元素</p>
+<h4 id="目标元素"><a href="#目标元素" class="headerlink" title="目标元素"></a>目标元素</h4><p>页面中任何一个元素都可以成为目标元素</p>
+<h4 id="事件监听"><a href="#事件监听" class="headerlink" title="事件监听"></a>事件监听</h4><h5 id="拖拽元素-1"><a href="#拖拽元素-1" class="headerlink" title="拖拽元素"></a>拖拽元素</h5><p>ondrag      应用于拖拽元素，整个拖拽过程都会调用<br>ondragstart 应用于拖拽元素，当拖拽开始时调用<br>ondragleave 应用于拖拽元素，当鼠标离开拖拽元素时调用<br>ondragend   应用于拖拽元素，当拖拽结束时调用</p>
+<h5 id="目标元素-1"><a href="#目标元素-1" class="headerlink" title="目标元素"></a>目标元素</h5><p>ondragenter 应用于目标元素，当拖拽元素进入时调用<br>ondragover  应用于目标元素，当停留在目标元素上时调用<br>ondrop      应用于目标元素，当在目标元素上松开鼠标时调用<br>ondragleave 应用于目标元素，当鼠标离开目标元素时调用</p>
+<h2 id="历史记录相关"><a href="#历史记录相关" class="headerlink" title="历史记录相关"></a>历史记录相关</h2><p>提供window.history，对象我们可以管理历史记录，可用于单页面应用，Single Page Application，可以无刷新改变网页内容。<br>旧版本浏览器..<br>history.back() 回退<br>history.forward() 前进</p>
+<h2 id="地理定位"><a href="#地理定位" class="headerlink" title="地理定位"></a>地理定位</h2><p>在HTML规范中，增加了获取用户地理信息的API，这样使得我们可以基于用户位置开发互联网应用，即基于位置服务 (Location Base Service) LBS</p>
+<h3 id="获取地理信息方式"><a href="#获取地理信息方式" class="headerlink" title="获取地理信息方式"></a>获取地理信息方式</h3><p>1、IP地址<br>2、三维坐标<br>    GPS（Global Positioning System，全球定位系统）<br>  目前世界上在用或在建的第2代全球卫星导航系统（GNSS）有：1.美国 Global Positioning System （全球定位系统） 简称GPS；.2.苏联/俄罗斯 GLOBAL NAVIGATION SATELLITE SYSTEM （全球卫星导航系统）简称GLONASS（格洛纳斯）；3.欧盟（欧洲是不准确的说法，包括中国在内的诸多国家也参与其中）Galileo satellite navigation system（伽利略卫星导航系统） 简称GALILEO（伽利略）；4.中国 BeiDou(COMPASS) Navigation Satellite System（北斗卫星导航系统）简称 BDS ；5.日本 Quasi-Zenith Satellite System （准天顶卫星系统） 简称QZSS ；印度 India Regional Navigation Satellite System（印度区域卫星导航系统）简称IRNSS；以上6个系统中国都能使用。<br>    Wi-Fi<br>    手机信号<br>3、用户自定义数据<br>如下图对不同获取方式的优缺点进行了比较，浏览器会自动以最优方式去获取用户地理信息。<br><img src="/2016/03/23/html5新增api/3.png" alt="html5新增api"></p>
+<h3 id="隐私"><a href="#隐私" class="headerlink" title="隐私"></a>隐私</h3><p>HTML5 Geolocation(地理位置定位) 规范提供了一套保护用户隐私的机制。必须先得到用户明确许可，才能获取用户的位置信息。</p>
+<h3 id="API详解"><a href="#API详解" class="headerlink" title="API详解"></a>API详解</h3><p><code>navigator.getCurrentPosition(successCallback, errorCallback, options)</code><br>获取当前地理信息<br><code>navigator.watchPosition(successCallback, errorCallback, options)</code><br>重复获取当前地理信息<br>1、当成功获取地理信息后，会调用succssCallback，并返回一个包含位置信息的对象position.Coords(坐标)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">position.coords.latitude纬度</div><div class="line">position.coords.longitude经度</div></pre></td></tr></table></figure></p>
+<p>2、当获取地理信息失败后，会调用errorCallback，并返回错误信息error<br>3、可选参数 options 对象可以调整位置信息数据收集方式</p>
+<h2 id="Web存储"><a href="#Web存储" class="headerlink" title="Web存储"></a>Web存储</h2><p>随着互联网的快速发展，基于网页的应用越来越普遍，同时也变的越来越复杂，为了满足各种各样的需求，会经常性在本地存储大量的数据，传统方式我们以document.cookie来进行存储的，但是由于其存储大小只有4k左右，并且解析也相当的复杂，给开发带来诸多不便，HTML5规范则提出解决方案。<br><strong>Storage</strong> 存储<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.sessionStorage  <span class="comment">//会话存储</span></div><div class="line"><span class="built_in">window</span>.localStorage  <span class="comment">//本地存储</span></div></pre></td></tr></table></figure></p>
+<p>(向本地保存数据,有可能在浏览器内存里面，有可能在硬盘上面.)</p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><p>1、设置、读取方便<br>2、容量较大，sessionStorage约5M、localStorage约20M<br>3、只能存储字符串，可以将对象JSON.stringify() 编码后存储</p>
+<h4 id="window-sessionStorage-会话存储"><a href="#window-sessionStorage-会话存储" class="headerlink" title="window.sessionStorage  会话存储"></a>window.sessionStorage  会话存储</h4><p>1、生命周期为关闭浏览器窗口<br>2、在同一个窗口下数据可以共享</p>
+<h4 id="window-localStorage"><a href="#window-localStorage" class="headerlink" title="window.localStorage"></a>window.localStorage</h4><p>1、永久生效，除非手动删除<br>2、可以多窗口共享</p>
+<h3 id="方法详解"><a href="#方法详解" class="headerlink" title="方法详解"></a>方法详解</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">setItem(key, value) <span class="comment">//设置存储内容</span></div><div class="line">getItem(key) <span class="comment">//读取存储内容</span></div><div class="line">removeItem(key) <span class="comment">//删除键值为key的存储内容</span></div><div class="line">clear() <span class="comment">//清空所有存储内容</span></div><div class="line">key(n) <span class="comment">//以索引值来获取存储内容</span></div></pre></td></tr></table></figure>
+<h2 id="全屏"><a href="#全屏" class="headerlink" title="全屏"></a>全屏</h2><p> HTML5规范允许用户自定义网页上任一元素全屏显示。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">requestFullscreen() <span class="comment">//开启全屏显示</span></div><div class="line">cancleFullscreen() <span class="comment">//关闭全屏显示</span></div></pre></td></tr></table></figure>
+<p>不同浏览器需要添加前缀如<br> webkitRequestFullScreen、mozRequestFullScreen<br> webkitCancleFullScreen、mozCancleFullScreen<br> 通过document.fullScreen检测当前是否处于全屏<br> 不同浏览器需要添加前缀<br>     document.webkitIsFullScreen、document.mozFullScreen<br>全屏伪类<br><code>:full-screen .box {}、:-webkit-full-screen {}、:moz-full-screen {}</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> docElm = <span class="built_in">document</span>.documentElement;</div><div class="line"><span class="keyword">if</span> (docElm.requestFullscreen) &#123;</div><div class="line">   docElm.requestFullscreen();</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span> <span class="keyword">if</span> (docElm.mozRequestFullScreen) &#123;</div><div class="line">   docElm.mozRequestFullScreen();</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span> <span class="keyword">if</span> (docElm.webkitRequestFullScreen) &#123;</div><div class="line">   docElm.webkitRequestFullScreen();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="网络状态"><a href="#网络状态" class="headerlink" title="网络状态"></a>网络状态</h2><p>我们可以通过window.onLine来检测，用户当前的网络状况，返回一个布尔值<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.ononline <span class="comment">//用户网络连接时被调用</span></div><div class="line"><span class="built_in">window</span>.onoffline <span class="comment">//用户网络断开时被调用</span></div></pre></td></tr></table></figure></p>
+<h2 id="应用缓存"><a href="#应用缓存" class="headerlink" title="应用缓存"></a>应用缓存</h2><p>HTML5中我们可以轻松的构建一个离线（无网络状态）应用，只需要创建一个cache manifest文件。</p>
+<h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><p>1、可配置需要缓存的资源<br>2、网络无连接应用仍可用<br>3、本地读取缓存资源，提升访问速度，增强用户体验<br>4、减少请求，缓解服务器负担</p>
+<p>###　缓存清单<br>一个普通文本文件，其中列出了浏览器应缓存以供离线访问的资源，推荐使用 <strong>.appcache</strong>为后缀名，添加MIME类型<br><code>AddType text/cache-manifest .appcache</code><br>例如我们创建了一个名为demo.appcache的文件，然后在需要应用缓存在页面的根元素(html)添加属性manifest=”demo.appcache”，路径要保证正确。</p>
+<h3 id="manifest文件格式"><a href="#manifest文件格式" class="headerlink" title="manifest文件格式"></a>manifest文件格式</h3><p>1、顶行写CACHE MANIFEST<br>2、CACHE: 换行 指定我们需要缓存的静态资源，如.css、image、js等<br>3、NETWORK: 换行 指定需要在线访问的资源，可使用通配符<br>4、FALLBACK: 当前页面无法访问时退回的页面(回退;  后退)换行当被缓存的文件找不到时的备用资源</p>
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><p>1、CACHE: 可以省略，这种情况下将需要缓存的资源写在CACHE MANIFEST<br>2、可以指定多个CACHE: NETWORK: FALLBACK:，无顺序限制</p>
+<p>CACHE:需要缓存那些资源.<br>NETWORK:不需要缓存那些资源，必须在网络下面才能访问.<br>FALLBACK:当访问不到某个资源时，自动由另外一个资源替换.<br>CACHE MANIFEST</p>
+   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">CACHE:</div><div class="line">     <span class="comment">#此部分是需要缓存的资源</span></div><div class="line">     1.jpg</div><div class="line">     js/jquery.min.js</div><div class="line">  </div><div class="line">     NETWORK:</div><div class="line">     js/demo.js</div><div class="line">      <span class="comment"># 可以使用 * 替代</span></div><div class="line">      FALLBACK:</div><div class="line">      one.css two.css    会缓存two.css 当找不到one.css 会去找two.css 文件.</div></pre></td></tr></table></figure>
+<p>3、#表示注释，只有当demo.appcache文件内容发生改变时或者手动清除缓存后，才会重新缓存。<br>4、chrome 可以通过chrome://appcache-internals/工具和离线（offline）模式来调试管理应用缓存</p>
+<h2 id="Font-Awesome-字体框架"><a href="#Font-Awesome-字体框架" class="headerlink" title="Font Awesome 字体框架"></a>Font Awesome 字体框架</h2><p><a href="http://fontawesome.dashgame.com/" target="_blank" rel="external">http://fontawesome.dashgame.com/</a><br>Font Awesome 提供可缩放的矢量图标，可以使用CSS所提供的所有特性对它们进行更改，包括：大小、颜色、阴影或者其它任何支持的效果</p>
+
+      
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/03/23/html5新增api/">html5新增api</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Say-hi 的个人博客">Say-hi</a></p>
+        <p><span>发布时间:</span>2016年03月23日 - 23时15分</p>
+        <p><span>最后更新:</span>2017年02月07日 - 23时39分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/03/23/html5新增api/" title="html5新增api">http://yoursite.com/2016/03/23/html5新增api/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/03/23/html5新增api/　　作者: Say-hi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2016/03/28/认识Canvas1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          认识Canvas(一)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/02/12/CSS-3d变换/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS-3d变换</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#多媒体相关的"><span class="toc-number">1.</span> <span class="toc-text">多媒体相关的</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#拖拽"><span class="toc-number">1.1.</span> <span class="toc-text">拖拽</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#拖拽元素"><span class="toc-number">1.1.1.</span> <span class="toc-text">拖拽元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#目标元素"><span class="toc-number">1.1.2.</span> <span class="toc-text">目标元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事件监听"><span class="toc-number">1.1.3.</span> <span class="toc-text">事件监听</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#拖拽元素-1"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">拖拽元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#目标元素-1"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">目标元素</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#历史记录相关"><span class="toc-number">2.</span> <span class="toc-text">历史记录相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#地理定位"><span class="toc-number">3.</span> <span class="toc-text">地理定位</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取地理信息方式"><span class="toc-number">3.1.</span> <span class="toc-text">获取地理信息方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隐私"><span class="toc-number">3.2.</span> <span class="toc-text">隐私</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#API详解"><span class="toc-number">3.3.</span> <span class="toc-text">API详解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web存储"><span class="toc-number">4.</span> <span class="toc-text">Web存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#特性"><span class="toc-number">4.1.</span> <span class="toc-text">特性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#window-sessionStorage-会话存储"><span class="toc-number">4.1.1.</span> <span class="toc-text">window.sessionStorage  会话存储</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#window-localStorage"><span class="toc-number">4.1.2.</span> <span class="toc-text">window.localStorage</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法详解"><span class="toc-number">4.2.</span> <span class="toc-text">方法详解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#全屏"><span class="toc-number">5.</span> <span class="toc-text">全屏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络状态"><span class="toc-number">6.</span> <span class="toc-text">网络状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用缓存"><span class="toc-number">7.</span> <span class="toc-text">应用缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#优势"><span class="toc-number">7.1.</span> <span class="toc-text">优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#manifest文件格式"><span class="toc-number">7.2.</span> <span class="toc-text">manifest文件格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其它"><span class="toc-number">7.3.</span> <span class="toc-text">其它</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Font-Awesome-字体框架"><span class="toc-number">8.</span> <span class="toc-text">Font Awesome 字体框架</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/03/28/认识Canvas1/" title="上一篇: 认识Canvas(一)">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/02/12/CSS-3d变换/" title="下一篇: CSS-3d变换">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/12/14/Back/">Back</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/19/Node学习/">Node学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/13/iframe使用/">Iframe使用小点</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/19/开启网页同步调试/">实现网页同步刷新调试</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/18/npm使用学习/">npm使用学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/07/ES6学习2/">ES6学习(1)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/06/ES6学习1/">ES6学习(0)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/09/小程序踩坑记录/">小程序踩坑记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/06/Sea-js使用-1/">Sea.js使用(1)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/JavaScript-原型链/">JavaScript--原型链</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/14/vue学习5/">Vue.js旅程(五)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/12/vue学习4/">Vue.js旅程(四)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/12/vue学习3/">Vue.js旅程(三)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/11/vue学习2/">Vue.js旅程(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/09/vue学习1/">Vue.js旅程(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/21/js面向对象3/">JavaScript面向对象(三)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/19/js面向对象2/">JavaScript面向对象(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/17/js面向对象1/">JavaScript面向对象(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/13/认识Canvas四/">认识Canvas(四)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/10/认识Canvas三/">认识Canvas三</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/认识canvas2/">认识Canvas(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/28/认识Canvas1/">认识Canvas(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/html5新增api/">html5新增api</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/12/CSS-3d变换/">CSS-3d变换</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/07/CSS3带来了些什么/">CSS3带来了些什么</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/浅谈HTML布局三/">浅谈HTML布局(三)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/浅谈HTML布局二/">浅谈HTML布局(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/25/浅谈HMTL布局/">浅谈HMTL布局(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/WEB基础知识/">WEB基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/First-blood/">我的第一篇博文</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/hello-world/">Hello World</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2018 Say-hi
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  强力驱动 
+            </div>
+        </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+          var backgroundnum = 24;
+          var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+          var backgroundimgtwo = '/background/bg-x.jpg'.replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+          $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+          $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+          $(".left-col-img img").attr('src', backgroundimgtwo);
+          setInterval(function () {
+            backgroundimgtwo = '/background/bg-x.jpg'.replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $(".left-col-img img").attr('src',backgroundimgtwo);
+          }, 5000)
+        })
+    </script>
+
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?90490cef7f318ba89cb0db0ba2ad675c";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
