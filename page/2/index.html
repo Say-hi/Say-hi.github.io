@@ -270,6 +270,73 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-JavaScript-原型链" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/15/JavaScript-原型链/" class="article-date">
+      <time datetime="2017-02-15T12:40:39.000Z" itemprop="datePublished">2017-02-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/15/JavaScript-原型链/">JavaScript--原型链</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>古语云:’基础不牢，地动山摇’,在提升自己的业务能力中，往往对一些基础性的知识没有做到深刻的认识，新技术固然给我们的开发提高了极大的便利，但追溯本源，我们更应该去关注这些新技术实现的底层运用了什么,在我们探索的过程中的同时也会不断地提高自己的能力。</p>
+<h2 id="Prototype-Prototype-Chain"><a href="#Prototype-Prototype-Chain" class="headerlink" title="Prototype $ Prototype Chain"></a>Prototype $ Prototype Chain</h2><p>面向对象编程时几乎每一个前端开发人员必须具备的开发思想，但是你真的理解什么是对象吗？<br>在JS中对象也是有区别的:<strong>普通对象</strong> <strong>函数对象</strong><br>Object\Function是JS自带的函数对象<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">funciton f1()&#123;&#125;;</div><div class="line"><span class="keyword">let</span> f2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"><span class="keyword">let</span> f3 = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">'str'</span>,<span class="string">'console.log(str)'</span>);</div><div class="line"><span class="keyword">let</span> o1 = &#123;&#125;;</div><div class="line"><span class="keyword">let</span> o2 = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line"><span class="keyword">let</span> o3 = <span class="keyword">new</span> f1();</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="built_in">Object</span>); <span class="comment">//function</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="built_in">Function</span>); <span class="comment">//function</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> o1); <span class="comment">//object</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> o2); <span class="comment">//object</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> o3); <span class="comment">//object</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> f1); <span class="comment">//function</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> f2); <span class="comment">//function</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> f3); <span class="comment">//function</span></div></pre></td></tr></table></figure></p>
+<p>o1,o2,o3 是普通对象，f1,f2,f3为函数对象；只要是通过new Function()创建的对象都是函数对象，其他的都是普通对象。</p>
+<h2 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象"></a>原型对象</h2><p>我们经常会使用arr.push()来向数组添加元素，但我们并没有在我们手写的代码中向arr这个对象添加push这个方法(属性),那么arr对象是从哪里获取到这个属性或者方法呢？</p>
+<h3 id="首先我们先了解什么是原型对象"><a href="#首先我们先了解什么是原型对象" class="headerlink" title="首先我们先了解什么是原型对象"></a>首先我们先了解什么是原型对象</h3><p>在JS中，当我们定义一个对象（函数）时，对象中都会包含一些预定的属性，这其中就</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-vue学习5" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -496,7 +563,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h2 id="Vue中的指令"><a href="#Vue中的指令" class="headerlink" title="Vue中的指令"></a>Vue中的指令</h2><h3 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h3><p>Vue的系统指令通常都是V-开头的这些指令<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>、自定义属性指令Vue.directive(指令id（注意不能以v-开头，将来在使用的时候自动加上）,<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;<span class="keyword">this</span>.el&#125;)</div><div class="line">    属性指令举例：</div><div class="line">    &lt;input type=<span class="string">"text"</span> v-focus&gt; 中的 v-focus 这个指令我们称之为自定义属性指令</div><div class="line"></div><div class="line">  定义格式：</div><div class="line">  Vue.directive(<span class="string">'focus'</span>,&#123;</div><div class="line">      bind:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="comment">//这个指令的逻辑</span></div><div class="line">        <span class="comment">//可以利用this.el来获取到当前指令所在的元素对象</span></div><div class="line">        <span class="keyword">this</span>.el.style.color = <span class="string">'red'</span>;</div><div class="line">      &#125;</div><div class="line">      &#125;);</div><div class="line"></div><div class="line"></div><div class="line"><span class="number">2</span>、自定义元素指令Vue.elementDirective(指令id,&#123;bind:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;&#125;&#125;)</div><div class="line">    <span class="keyword">this</span>.el</div><div class="line">    <span class="keyword">this</span>.vm</div></pre></td></tr></table></figure></p>
+              <h2 id="Vue中的指令"><a href="#Vue中的指令" class="headerlink" title="Vue中的指令"></a>Vue中的指令</h2><h3 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h3><p>Vue的系统指令通常都是V-开头的这些指令<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>、自定义属性指令Vue.directive(指令id（注意不能以v-开头，将来在使用的时候自动加上）,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">this</span>.el&#125;)</div><div class="line">    属性指令举例：</div><div class="line">    &lt;input type=<span class="string">"text"</span> v-focus&gt; 中的 v-focus 这个指令我们称之为自定义属性指令</div><div class="line"></div><div class="line">  定义格式：</div><div class="line">  Vue.directive(<span class="string">'focus'</span>,&#123;</div><div class="line">      <span class="attr">bind</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="comment">//这个指令的逻辑</span></div><div class="line">        <span class="comment">//可以利用this.el来获取到当前指令所在的元素对象</span></div><div class="line">        <span class="keyword">this</span>.el.style.color = <span class="string">'red'</span>;</div><div class="line">      &#125;</div><div class="line">      &#125;);</div><div class="line"></div><div class="line"></div><div class="line"><span class="number">2</span>、自定义元素指令Vue.elementDirective(指令id,&#123;<span class="attr">bind</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;&#125;)</div><div class="line">    <span class="keyword">this</span>.el</div><div class="line">    <span class="keyword">this</span>.vm</div></pre></td></tr></table></figure></p>
           
       
       
@@ -866,73 +933,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/04/13/认识Canvas四/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-认识Canvas三" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/10/认识Canvas三/" class="article-date">
-      <time datetime="2016-04-10T06:17:54.000Z" itemprop="datePublished">2016-04-10</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/10/认识Canvas三/">认识Canvas三</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="绘制图片"><a href="#绘制图片" class="headerlink" title="绘制图片"></a>绘制图片</h2><h4 id="创建图片"><a href="#创建图片" class="headerlink" title="创建图片"></a>创建图片</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> img=<span class="built_in">document</span>.createElement(<span class="string">"img"</span>);</div><div class="line">img.src=<span class="string">""</span>;</div><div class="line">-------------------------------</div><div class="line"><span class="keyword">var</span> img=<span class="keyword">new</span> Image();</div><div class="line">img.src=<span class="string">""</span>;</div></pre></td></tr></table></figure>
-          
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Canvas/">Canvas</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/10/认识Canvas三/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
