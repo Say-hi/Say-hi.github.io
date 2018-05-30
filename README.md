@@ -1,6 +1,6 @@
 ## 本博客由HEXO强力驱动
 
-线上地址：http://blog.jiangwenqiang.com
+线上地址：https://b.jiangwenqiang.com
 
 ```html
 
