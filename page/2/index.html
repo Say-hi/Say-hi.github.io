@@ -274,74 +274,6 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-vue学习3" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/02/12/vue学习3/" class="article-date">
-      <time datetime="2017-02-12T02:54:06.000Z" itemprop="datePublished">2017-02-12</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/12/vue学习3/">Vue.js旅程(三)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="Vue组件"><a href="#Vue组件" class="headerlink" title="Vue组件"></a>Vue组件</h2><p>我们在选择各类框架的时候，都希望框架简单易用。在Vue中向我们提供了组件功能，我们可以定义各种个性化的组件来实现目标。<br>接下来演示三种组件的写法</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">account</span>&gt;</span><span class="tag">&lt;/<span class="name">account</span>&gt;</span>//插入定义的组件</div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 写法3.0中对应的模板内容 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">id</span>=<span class="string">'account'</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>注册<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript"></span></div><div class="line"><span class="comment">//写法1.0：</span></div><div class="line"><span class="comment">//首先我们需要定义组件</span></div><div class="line"><span class="keyword">var</span> account = Vue.extend(&#123;</div><div class="line">    template:<span class="string">'&lt;a href="#"&gt;登录&lt;/a&gt; &lt;a href="#"&gt;注册&lt;/a&gt;'</span></div><div class="line">    &#125;);</div><div class="line"><span class="comment">//然后在全局中注册组件</span></div><div class="line">Vue.component(<span class="string">'account'</span>,account);</div><div class="line"><span class="comment">//写法2.0：</span></div><div class="line"><span class="comment">//将定义组件和注册组件一步到位</span></div><div class="line">Vue.component(<span class="string">'account'</span>,&#123;</div><div class="line">        template:<span class="string">'&lt;a href="#"&gt;登录&lt;/a&gt; &lt;a href="#"&gt;注册&lt;/a&gt;'</span></div><div class="line">    &#125;);</div><div class="line"><span class="comment">//写法3.0:</span></div><div class="line"><span class="comment">//不把template的内容写在js内</span></div><div class="line">Vue.component(<span class="string">'account'</span>,&#123;</div><div class="line">    template:<span class="string">'#account'</span>,</div><div class="line">    &#125;)</div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">    el:<span class="string">'#app'</span></div><div class="line">    &#125;)</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-          
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Vue/">Vue</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/框架/">框架</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2017/02/12/vue学习3/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-vue学习4" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -392,6 +324,74 @@
       
         <p class="article-more-link">
           <a  href="/2017/02/12/vue学习4/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-vue学习3" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/12/vue学习3/" class="article-date">
+      <time datetime="2017-02-12T02:54:06.000Z" itemprop="datePublished">2017-02-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/12/vue学习3/">Vue.js旅程(三)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="Vue组件"><a href="#Vue组件" class="headerlink" title="Vue组件"></a>Vue组件</h2><p>我们在选择各类框架的时候，都希望框架简单易用。在Vue中向我们提供了组件功能，我们可以定义各种个性化的组件来实现目标。<br>接下来演示三种组件的写法</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">account</span>&gt;</span><span class="tag">&lt;/<span class="name">account</span>&gt;</span>//插入定义的组件</div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 写法3.0中对应的模板内容 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">id</span>=<span class="string">'account'</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>注册<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript"></span></div><div class="line"><span class="comment">//写法1.0：</span></div><div class="line"><span class="comment">//首先我们需要定义组件</span></div><div class="line"><span class="keyword">var</span> account = Vue.extend(&#123;</div><div class="line">    template:<span class="string">'&lt;a href="#"&gt;登录&lt;/a&gt; &lt;a href="#"&gt;注册&lt;/a&gt;'</span></div><div class="line">    &#125;);</div><div class="line"><span class="comment">//然后在全局中注册组件</span></div><div class="line">Vue.component(<span class="string">'account'</span>,account);</div><div class="line"><span class="comment">//写法2.0：</span></div><div class="line"><span class="comment">//将定义组件和注册组件一步到位</span></div><div class="line">Vue.component(<span class="string">'account'</span>,&#123;</div><div class="line">        template:<span class="string">'&lt;a href="#"&gt;登录&lt;/a&gt; &lt;a href="#"&gt;注册&lt;/a&gt;'</span></div><div class="line">    &#125;);</div><div class="line"><span class="comment">//写法3.0:</span></div><div class="line"><span class="comment">//不把template的内容写在js内</span></div><div class="line">Vue.component(<span class="string">'account'</span>,&#123;</div><div class="line">    template:<span class="string">'#account'</span>,</div><div class="line">    &#125;)</div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">    el:<span class="string">'#app'</span></div><div class="line">    &#125;)</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Vue/">Vue</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/框架/">框架</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/02/12/vue学习3/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
